@@ -8,8 +8,13 @@
   {% for task in tasks %}
 
     <tr>
-      <th>{{ task.title }}</th>
+      <td>{{ task.title }}</td>
+      <td><a href="{% url 'task' task.id %}">View</a></td>
     </tr>
+
+  {% empty %}
+
+    <h3>No items in list</h3>
 
   {% endfor %}
 </table>
